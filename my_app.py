@@ -10,7 +10,7 @@ from instr import *
 from second_win import *
      
 class MainWin(QWidget):
-   def _init_(self):
+   def __init__(self):
        ''' the window which the greeting is located in '''
        super()._init_()
 
