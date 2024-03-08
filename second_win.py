@@ -7,7 +7,7 @@ from final_win import *
 class TestWin(QWidget):
     def __init__(self):
        ''' the window in which the survey is being conducted '''
-        super()._init_()
+        super().__init__()
 
 
        # creating and configuring graphic elements:
