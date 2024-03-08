@@ -5,9 +5,9 @@ from final_win import *
 
 
 class TestWin(QWidget):
-    def _init_(self):
+    def __init__(self):
        ''' the window in which the survey is being conducted '''
-        super()._init_()
+        super().__init__()
 
 
        # creating and configuring graphic elements:
@@ -108,8 +108,36 @@ class TestWin(QWidget):
         self.move(win_x, win_y)
 
     def timer_test(self):
+        global time
+        time= Qtime(0,1,0)
+        self.timer = Qtimer()
         self.timer.timeout.connect(self.timer1Event)
         self.timer.start(1000)
     
     def timer1Event(self):
-        pass
+        global time
+        time = time.addSecs(-1)
+        self.text_timer.setText(time.toString("hh:mm:ss"))
+        self.text_timer.setFont(QFont("Times", 36, QFont.Bold))
+        self.text_timer.setStyleSheet("color: rgb(0,0,0)")
+        if time.toString("hh:mm:ss") == "00:00:00":
+            self.timer.stop()
+
+    def timer2Event(self):
+        global time
+        time = time.addSecs(-1)
+        self.text_timer.setText(time.toString("hh:mm:ss"))
+        self.text_timer.setFont(QFont("Times", 36, QFont.Bold))
+        self.text_timer.setStyleSheet("color: rgb(0,0,0)")
+        if time.toString("hh:mm:ss") == "00:00:00":
+            self.timer.stop()
+     def timer3Event(self):
+         global time
+         time = time.addSecs(-1)
+        self.text_timer.setText(time.toString("hh:mm:ss"))
+        self.text_timer.setFont(QFont("Times", 36, QFont.Bold))
+        self.text_timer.setStyleSheet("color: rgb(0,0,0)")
+        if time.toString("hh:mm:ss") == "00:00:00":
+            self.timer.stop()
+
+        
