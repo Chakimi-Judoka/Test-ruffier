@@ -11,7 +11,7 @@ from final_win import *
 
 
 class TestWin(QWidget):
-   def _init_(self):
+    def _init_(self):
        ''' the window in which the survey is being conducted '''
        super()._init_()
 
@@ -30,23 +30,23 @@ class TestWin(QWidget):
        # start:
        self.show()
   
-   def next_click(self):
+    def next_click(self):
        self.tw = TestWin()
        self.hide()
 
 
-   def connects(self):
+    def connects(self):
        self.btn_next.clicked.connect(self.next_click)
 
 
    ''' sets what the window will look like (label, size, location) '''
-   def set_appear(self):
+    def set_appear(self):
        self.setWindowTitle(txt_title)
        self.resize(win_width, win_height)
        self.move(win_x, win_y)
 
 
-   def initUI(self):
+    def initUI(self):
        ''' creates graphic elements '''
        #self.questionnary = AllQuestions()
        self.btn_next = QPushButton(txt_sendresults, self)
@@ -102,18 +102,19 @@ class TestWin(QWidget):
        self.h_line.addLayout(self.r_line)       
        self.setLayout(self.h_line)
   
-   def next_click(self):
+    def next_click(self):
        self.hide()
        self.fw = FinalWin()
 
 
-   def connects(self):
+    def connects(self):
        self.btn_next.clicked.connect(self.next_click)
 
 
    ''' sets what the window will look like (label, size, location) '''
-   def set_appear(self):
+    def set_appear(self):
        self.setWindowTitle(txt_title)
        self.resize(win_width, win_height)
        self.move(win_x, win_y)
 
+    
