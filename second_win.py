@@ -5,7 +5,7 @@ from final_win import *
 
 
 class TestWin(QWidget):
-    def _init_(self):
+    def __init__(self):
        ''' the window in which the survey is being conducted '''
         super()._init_()
 
